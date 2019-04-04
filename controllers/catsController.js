@@ -3,11 +3,12 @@ const express = require("express");
 const router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
-const cat = require("../models/cat.js");
+//this was cat
+const burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", (req, res) => {
-  cat.all(data => {
+  burger.all(data => {
     const hbsObject = {
       cats: data
     };
@@ -16,19 +17,19 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/api/cats", (req, res) => {
-  cat.create(["name", "sleepy"], [req.body.name, req.body.sleepy], result => {
+router.post("/api/burgers", (req, res) => {
+  burger.create(["burger_name", "devoured"], [req.body.name, req.body.sleepy], result => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
 
-router.put("/api/cats/:id", (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
   const condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  cat.update(
+  burger.update(
     {
       sleepy: req.body.sleepy
     },
@@ -45,11 +46,11 @@ router.put("/api/cats/:id", (req, res) => {
 });
 
 // add a delete route to the cats api
-router.delete("/api/cats/:id", (req, res) => {
+router.delete("/api/burgers/:id", (req, res) => {
   // call the cats model 
   // to delete a cat by id 
   // respond back with data
-  cat.delete("id", req.params.id, (data) => {
+  burger.delete("id", req.params.id, (data) => {
     res.json(data);
   });
 });
