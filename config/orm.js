@@ -99,6 +99,12 @@ const orm = {
   }
 };
 
+//  orm.updateOne("burger","id",1,(data)=> {
+//    console.log(data);
+
+// } )
+
+
 // orm.delete("cats", "id", 1, (data) => {
 //   console.log(data);
 // });

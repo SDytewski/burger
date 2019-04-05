@@ -12,3 +12,4 @@ CREATE TABLE burgers
 );
 
 
+SELECT * FROM burgers
