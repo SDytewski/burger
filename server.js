@@ -8,6 +8,7 @@ const app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
+app.use(express.static('views/images')); 
 
 // Parse request body as JSON, this takes in data
 app.use(express.urlencoded({ extended: true }));
