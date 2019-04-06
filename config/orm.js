@@ -29,8 +29,7 @@ function objToSql(ob) {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
+     
       arr.push(key + "=" + value);
     }
   }
@@ -52,6 +51,8 @@ const orm = {
     
     });
   },
+
+  //Function for creating a burger
   insertOne: function(table, cols, vals, cb) {
     let queryString = "INSERT INTO " + table;
 
@@ -72,7 +73,7 @@ const orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+  // Update Function
   updateOne: function(table, objColVals, condition, cb) {
     let queryString = "UPDATE " + table;
 
@@ -101,15 +102,8 @@ const orm = {
   }
 };
 
-//  orm.updateOne("burger","id",1,(data)=> {
-//    console.log(data);
-
-// } )
 
 
-// orm.delete("cats", "id", 1, (data) => {
-//   console.log(data);
-// });
 
 // Export the orm object for the model (cat.js).
 module.exports = orm;

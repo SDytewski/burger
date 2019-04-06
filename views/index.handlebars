@@ -15,17 +15,20 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9">
+        {{!-- Our Column for Burgers not Eaten --}}
         <div class="float-left">
           <h2 class="top-heading">Not Eaten</h2>
           {{#each burgers}}
           {{#unless this.devoured}}
           <div>
-            {{!-- <form action="/burgers" method="POST"> --}}
+
+
+            {{!-- Row within a column for Name and Devoured Button --}}
             <div class="row">
               <div class="col 6">
-               
-                  <h3>{{this.id}}.{{this.burger_name}}</h3>
-              
+
+                <h3>{{this.id}}.{{this.burger_name}}</h3>
+
               </div>
               <div class="col 6">
                 <button class='devour-from' data-id="{{id}}">Devour </button>
@@ -39,16 +42,16 @@
       </div>
 
       <div class="col-md-3">
+        {{!-- Our Column on the Right for burgers devoured --}}
         <div class="float-left">
-          
           <h2 class="top-heading">Devoured</h2>
           {{#each burgers}}
           {{#if this.devoured}}
           <div class='burgerEaten'>
             <div>
-              
+
               <h3>{{this.id}}.{{this.burger_name}}</h3>
-              
+
             </div>
           </div>
           {{/if}}
