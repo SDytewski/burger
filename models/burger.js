@@ -23,7 +23,13 @@ var burger = {
       cb(res);
     });
   },
-  updateOne: function(objColVals, condition, cb) {
+  // updateOne: function(objColVals, condition, cb) {
+  //   orm.updateOne("burgers", objColVals, condition, (res) => {
+  //     cb(res);
+  //   });
+  // },
+
+  update: function(objColVals, condition, cb) {
     orm.updateOne("burgers", objColVals, condition, (res) => {
       cb(res);
     });
@@ -37,16 +43,7 @@ var burger = {
     });
   }
 };
-// cat.delete("id", 6, (data) => {
-//   console.log(data);
-// });
 
-// var myBurger = {
-    
-//     burger_name: "Dav",
-//     devoured: 0
-
-// };
 
 // burger.all(data => console.log(data));
 //burger.insertOne(myBurger, data => console.log(data));

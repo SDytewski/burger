@@ -45,23 +45,25 @@
   <div class="container">
     <div class="row">
       <div class="col s6">
-        {{#each burger_data}}
+        {{#each burgers}}
           {{#unless this.devoured}}
             <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                <button type="submit" class='devour-from'> {{this.burger_name}}</button>
-              </form>
+              {{!-- <form action="/burgers" method="POST"> --}}
+              <h2>{{this.burger_name}}</h2>
+                <button class='devour-from' data-id="{{id}}">Devour </button>
+              {{!-- </form> --}}
             </div>
           {{/unless}}
         {{/each}}
       </div>
 
       <div class="col s6">
-        {{#each burger_data}}
+        <h1>Devoured</h1>
+        {{#each burgers}}
           {{#if this.devoured}}
             <div class='burgerEaten'>
               <div>
-                {{this.burger_name}}
+                <h2>{{this.burger_name}}</h2>
               </div>
             </div>
           {{/if}}

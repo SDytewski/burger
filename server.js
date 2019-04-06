@@ -2,7 +2,7 @@ const express = require("express");
 
 const PORT = process.env.PORT || 3000;
 
-const burger = require("./models/burger")
+// const burger = require("./models/burger")
 //const orm = require("./config/orm");
 const app = express();
 
@@ -22,11 +22,11 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //displays content to the screen from index.handlebars.
-app.get("/",  (req, res) =>{
-  res.render("index");
+// app.get("/",  (req, res) =>{
+//   res.render("index");
 
 
-});
+// });
 
 // Import routes and give the server access to them.
 const routes = require("./controllers/burger_Controller.js");
